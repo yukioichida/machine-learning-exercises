@@ -36,7 +36,7 @@ def knn(new_sample, k):
     data['distance'] = data.apply(lambda row: euclidian_distance(new_sample, (row['x'], row['y'])), axis=1)
     # get k nearest data from data frame
     nearest_data = data.nsmallest(k, 'distance')
-    # get class with most frequent class in nearest data
+    # get the most frequent class in nearest data
     return nearest_data['class'].value_counts().idxmax()
 
 
